@@ -27,7 +27,7 @@ export default function HomePage() {
               Jaspreet Bhamrai
             </div>
             <p className='text-md m-3 text-center font-extralight text-gray-400'>
-              For as long as I can remember I’ve 
+              For as long as I can remember I&apos;ve 
               been obsessed with the idea of 
               travel. I was always that person who
                was forever daydreaming of foreign 

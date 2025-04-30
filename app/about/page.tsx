@@ -8,7 +8,7 @@ const About = () => {
         <>
         <Navbar></Navbar>
         <div className='relative w-full h-[93vh]'>
-            <Image src='placeHolder.svg' fill className='object-cover' alt='Blog Image'></Image>
+            <Image src='/placeHolder.svg' fill className='object-cover' alt='Blog Image'></Image>
         </div>
 
         <div className='flex flex-col items-center w-full h-auto'>
@@ -43,13 +43,13 @@ const About = () => {
                 <div className='w-3/5'>
                 <hr className='border-1 border-gray-300'/>
                     <div className='text-4xl italic m-4 my-12 text-center text-black'>
-                        Some beautiful paths can't be discovered without getting lost.
+                        Some beautiful paths can&apos;t be discovered without getting lost.
                     </div>
                 <hr className='border-1 border-gray-300'/>
-                <p className='m-8 '>For as long as I can remember I’ve been obsessed with the idea of travel. I was always that person who was forever daydreaming of foreign lands and unfamiliar cultures; coming up with travel itineraries that would challenge my perceptions and help me gain a deeper understanding of the world.</p>
+                <p className='m-8 '>For as long as I can remember I&apos;ve been obsessed with the idea of travel. I was always that person who was forever daydreaming of foreign lands and unfamiliar cultures; coming up with travel itineraries that would challenge my perceptions and help me gain a deeper understanding of the world.</p>
                 </div>
                 <div className="relative w-4/5 h-[500px] flex justify-around">
-                    <div className="relative w-9/20 h-full">
+                    <div className="relative w-[45%] h-full">
                         <Image 
                         src="/placeHolder.svg" 
                         alt="Pic 1" 
@@ -58,7 +58,7 @@ const About = () => {
                         className="object-cover"
                         />
                     </div>
-                    <div className="relative w-9/20 h-full">
+                    <div className="relative w-[45%] h-full">
                         <Image 
                         src="/placeHolder.svg" 
                         alt="Pic 2" 

@@ -9,7 +9,7 @@ import BlogCard from './BlogCard';
 
 interface Blog {
     id: number;
-    category: string;
+    categories: string[];
     title: string;
     excerpt: string;
     image: string;
@@ -45,7 +45,7 @@ export default function HomeClient({ blogs, categories }: HomeClientProps) {
 
   const filteredBlogs = selectedCategory === "All" 
     ? blogs 
-    : blogs.filter(blog => blog.category === selectedCategory);
+    : blogs.filter(blog => blog.categories.some(category => category === selectedCategory));
 
   return (
     <>
@@ -114,7 +114,7 @@ export default function HomeClient({ blogs, categories }: HomeClientProps) {
                 <div className='h-auto w-full flex flex-col gap-10'>
                     {filteredBlogs.length > 0 ? (
                     filteredBlogs.map((blog) => (
-                        <BlogCard key={blog.id} blog={blog} />
+                        <BlogCard key={blog.id} blog={blog} selected={selectedCategory}/>
                     ))
                     ) : (
                     <div className="w-full text-center py-12 text-gray-500">
@@ -122,9 +122,7 @@ export default function HomeClient({ blogs, categories }: HomeClientProps) {
                     </div>
                     )}
                 </div>
-            </div>
-
-            
+            </div>    
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Search } from 'lucide-react'; // Make sure 'lucide-react' is installed
-import {blogs} from '../data/blog'
+import blogs from '../data/blog.json'
 
 const SearchBar = () => {
   const [expanded, setExpanded] = useState(false);
@@ -10,9 +10,10 @@ const SearchBar = () => {
   const filteredArticles = blogs.filter(article =>
     article.title.toLowerCase().includes(query.toLowerCase()) ||
     article.excerpt.toLowerCase().includes(query.toLowerCase()) ||
-    article.category.toLowerCase().includes(query.toLowerCase()) ||
+    article.categories.some(category => category.toLowerCase().includes(query.toLowerCase())) || // ✅ check each category
     article.author.toLowerCase().includes(query.toLowerCase())
   );
+  
 
   const handleBlur = () => {
     setExpanded(false);

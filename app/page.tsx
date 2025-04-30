@@ -1,9 +1,10 @@
 import Navbar from './components/Navbar';
 import Image from 'next/image';
-import { blogs } from './data/blog';
+import blogs from './data/blog.json';
 import { categories } from './data/categories';
 import HomeClient from './components/HomeClient';
 import NewsletterEmail from './components/NewsletterEmail';
+import Footer from './components/Footer';
 
 export default function HomePage() {
   return (
@@ -16,7 +17,7 @@ export default function HomePage() {
 
       {/* SidePanel */}
       <div>
-        <div className="absolute right-60 z-50 mt-140 w-9/50">
+        <div className="absolute right-50 z-50 mt-140 w-9/50">
           {/* About */}
           <div className="relative w-full h-auto border-black border-2 p-8 pt-16 flex flex-col items-center my-10">
             <div className="absolute w-40 h-40 rounded-full overflow-hidden top-0 -translate-y-1/2">
@@ -75,6 +76,9 @@ export default function HomePage() {
       <div className="w-full">
         <HomeClient blogs={blogs} categories={categories} />
       </div>
+
+      {/* Footer */}
+      <Footer></Footer>
     </>
   );
 }

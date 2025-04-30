@@ -36,13 +36,13 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
       };
 
   return (
-    <div className='h-80 bg-white flex rounded-lg overflow-hidden transition-all duration-300 hover:shadow-md transform hover:-translate-y-2'>
+    <div className='h-80 bg-white flex overflow-hidden transition-all duration-300 hover:shadow-md transform hover:-translate-y-2'>
       <div className='relative h-full w-2/5'>
         <Image 
           src={blog.image || '/placeHolder.svg'} 
-          layout='fill'
-          objectFit='cover'
+          fill
           alt={blog.title}
+          className='object-cover'
         />
       </div>
       

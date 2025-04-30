@@ -11,7 +11,7 @@ export default function HomePage() {
       <Navbar />
 
       <div className='relative w-full h-[93vh]'>
-        <Image src='/placeHolder.svg' layout='fill' objectFit='cover' alt='Blog Image' />
+        <Image src='/placeHolder.svg' fill alt='Blog Image' className='object-cover'/>
       </div>
 
       {/* SidePanel */}
@@ -20,7 +20,7 @@ export default function HomePage() {
           {/* About */}
           <div className="relative w-full h-auto border-black border-2 p-8 pt-16 flex flex-col items-center my-10">
             <div className="absolute w-40 h-40 rounded-full overflow-hidden top-0 -translate-y-1/2">
-              <Image src="/placeHolder.svg" alt="profile image" layout="fill" objectFit="cover" />
+              <Image src="/placeHolder.svg" alt="profile image" fill className='object-cover'/>
             </div>
             <div className='text-3xl font-bold mt-10'>
               Jaspreet Bhamrai
@@ -41,20 +41,20 @@ export default function HomePage() {
             <div className='flex gap-3 absolute bottom-0 translate-y-1/2'>
               <div className='w-15 h-15 bg-black flex justify-center items-center'>
                 <div className='w-8 h-8 relative'>
-                  <Image src='/facebookIcon.svg' alt='facebook icon' layout='fill' objectFit='contain'></Image>
+                  <Image src='/facebookIcon.svg' alt='facebook icon' fill></Image>
                 </div>
               </div>
               <div className='w-15 h-15 bg-black flex justify-center items-center'>
                 <div className='w-8 h-8 relative'>
-                  <Image src='/instaIcon.svg' alt='instagram icon' layout='fill' objectFit='contain'></Image>
+                  <Image src='/instaIcon.svg' alt='instagram icon' fill></Image>
                 </div>
               </div><div className='w-15 h-15 bg-black flex justify-center items-center'>
                 <div className='w-8 h-8 relative'>
-                  <Image src='/youtubeIcon.svg' alt='youtube icon' layout='fill' objectFit='contain'></Image>
+                  <Image src='/youtubeIcon.svg' alt='youtube icon' fill></Image>
                 </div>
               </div><div className='w-15 h-15 bg-black flex justify-center items-center'>
                 <div className='w-8 h-8 relative'>
-                  <Image src='/fiveIcon.svg' alt='five icon' layout='fill' objectFit='contain'></Image>
+                  <Image src='/fiveIcon.svg' alt='five icon' fill></Image>
                 </div>
               </div>
             </div>

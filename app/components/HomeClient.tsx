@@ -50,7 +50,7 @@ export default function HomeClient({ blogs, categories }: HomeClientProps) {
   return (
     <>
       {/* Featured Blogs */}
-      <div className='absolute bottom-7/100 left-1/8 w-37/100 h-[500px] z-10 bg-white pt-12 px-6'>
+      <div className='absolute bottom-[7vh] left-1/8 w-37/100 h-[500px] z-10 bg-white pt-12 px-6'>
         <AnimatePresence mode="wait">
           <motion.div
             key={blogsToFeature[currentIndex].id}

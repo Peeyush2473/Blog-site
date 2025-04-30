@@ -5,6 +5,8 @@ export const categories = [
     "Adventure",
     "Food",
     "Culture",
-    "Nature"
+    "Nature",
+    "Travel", 
+    "Tech"
   ];
   

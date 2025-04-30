@@ -10,27 +10,28 @@ const SearchBar = () => {
   const filteredArticles = blogs.filter(article =>
     article.title.toLowerCase().includes(query.toLowerCase()) ||
     article.excerpt.toLowerCase().includes(query.toLowerCase()) ||
-    article.category.toLowerCase().includes(query.toLowerCase())
+    article.category.toLowerCase().includes(query.toLowerCase()) ||
+    article.author.toLowerCase().includes(query.toLowerCase())
   );
 
   const handleBlur = () => {
-    if (query === '') setExpanded(false);
+    setExpanded(false);
   };
 
   return (
     <div className="relative">
       {/* Search Bar container */}
-      <div
-        className={`flex items-center border border-gray-300 rounded-full px-4 py-2 transition-all duration-300 ease-in-out ${
+      <button
+        className={`flex items-center border border-gray-300 cursor-pointer rounded-full px-4 py-2 transition-all duration-300 ease-in-out ${
           expanded ? 'w-80 bg-white' : 'w-12 bg-transparent'
         }`}
+        onClick={() => setExpanded(true)}
       >
         {/* Search Icon */}
         <Search
-          className={`text-black cursor-pointer transition-all duration-400 ease-in-out ${
+          className={`text-black transition-all duration-400 ease-in-out ${
             expanded ? 'scale-100' : 'scale-125'
           }`}
-          onClick={() => setExpanded(true)}
         />
 
         {/* Search Input field */}
@@ -45,7 +46,7 @@ const SearchBar = () => {
             autoFocus
           />
         )}
-      </div>
+      </button>
 
       {/* Search Results */}
       {expanded && query && (

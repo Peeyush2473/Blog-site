@@ -7,7 +7,7 @@ interface ReadMoreProps {
 const ReadMore: React.FC<ReadMoreProps> = ({ onClick }) => {
     return(
         <>
-        <button onClick={onClick} className='bg-black text-white w-40 h-13 text-xl font-bold'>Read more</button>
+        <button onClick={onClick} className='bg-black text-white w-40 h-13 text-xl font-bold cursor-pointer'>Read more</button>
         </>
     )
 }

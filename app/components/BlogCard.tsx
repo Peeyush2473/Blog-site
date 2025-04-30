@@ -1,6 +1,8 @@
+'use client'
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import ReadMore from './ReadMore';
+import { useRouter } from 'next/navigation'
 
 interface BlogCardProps {
   blog: {
@@ -27,30 +29,40 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
 
       const slug = generateSlug(blog.title);
 
+      const router = useRouter();
+
+      const handleReadMore = () => {
+        router.push(`/blog/${slug}`);
+      };
+
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2">
-      <div className="relative h-48 w-full">
+    <div className='h-80 bg-white flex rounded-lg overflow-hidden transition-all duration-300 hover:shadow-md transform hover:-translate-y-2'>
+      <div className='relative h-full w-2/5'>
         <Image 
           src={blog.image || '/placeHolder.svg'} 
-          layout="fill"
-          objectFit="cover"
+          layout='fill'
+          objectFit='cover'
           alt={blog.title}
         />
       </div>
       
-      <div className="p-6">
-        <div className="flex justify-between items-center mb-3">
-          <span className="text-sm font-medium text-blue-600">{blog.category}</span>
-          <span className="text-xs text-gray-500">{blog.date}</span>
+      <div className='relative w-full px-8 py-6'>
+        <div className='flex items-center mb-1'>
+          <span className='text-md font-medium text-black'>#{blog.category}</span>
+          <span className='text-xl -translate-y-1.5 mx-2 text-neutral-300'>.</span>
+          <span className='text-md font-medium text-gray-500'>{blog.date}</span>
         </div>
         
-        <h3 className="text-xl font-bold mb-2 line-clamp-2">{blog.title}</h3>
+        <div className='text-4xl h-auto font-bold mb-2'>{blog.title}</div>
         
-        <div className="flex justify-between items-center">
-          <span className="text-sm text-gray-500">By {blog.author}</span>
-          <Link href={`/blog/${slug}`}>
-            <div className="text-blue-600 font-medium hover:underline">Read More</div>
-          </Link>
+        <div className=''>
+          <span className='text-sm text-neutral-400'>By {blog.author}</span>
+        </div>
+        <div className='text-gray-500 my-3 font-medium'>
+          {blog.excerpt}
+        </div>
+        <div className='absolute bottom-8'>
+          <ReadMore onClick={handleReadMore}></ReadMore>
         </div>
       </div>
     </div>

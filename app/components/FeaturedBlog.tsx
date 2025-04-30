@@ -13,11 +13,23 @@ interface FeaturedBlogProps {
   };
 }
 
+
 const FeaturedBlog: React.FC<FeaturedBlogProps> = ({ blog }) => {
   const router = useRouter();
 
+  const generateSlug = (title: string): string => {
+    return title
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, '') // Remove special characters
+      .replace(/\s+/g, '-')     // Replace spaces with hyphens
+      .replace(/--+/g, '-')     // Replace multiple hyphens with single hyphen
+      .trim();                  // Trim leading/trailing spaces or hyphens
+  };
+
+  const slug = generateSlug(blog.title);
+
   const handleReadMore = () => {
-    router.push(`/blog/${blog.id}`);
+    router.push(`/blog/${slug}`);
   };
 
   return (

@@ -70,7 +70,7 @@ const SideBar: React.FC<SideBarProps> = ({ isOpen, onClose }) => {
                 required
                 className='peer w-full px-4 py-2 border-b-2 bg-transparent text-white focus:outline-none focus:ring-0'
               />
-              <span className='absolute left-4 top-1/2 -translate-y-1/2 text-white text-base transition-[top,font-size] duration-200 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-focus:top-0 peer-focus:text-sm peer-focus:text-blue-400'>
+              <span className='absolute -z-2 left-4 top-1/2 -translate-y-1/2 text-white text-base transition-[top,font-size] duration-200 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-focus:top-0 peer-focus:text-sm peer-focus:text-blue-400'>
                 Enter your email
               </span>
             </div>
